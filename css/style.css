@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap');
+
+:root {
+/*============================================= Typography =============================================*/
+    --body-font: 'Poppins', sans-serif;
+
+/*============================================= Font Size =============================================*/
+/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px, 2rem = 32px, 2.5rem = 40px ...*/
+    --normal-fz: .75rem;
+    --titles-fz: 1.5rem;
+    --big-titles-fz: 2.5rem;
+
+/*============================================= Font Weight =============================================*/
+    --thin: 200;
+    --regular: 400;
+    --bold: 600;
+
+/*============================================= Color Pallet =============================================*/
+    --imperial-red: #F22738;
+    --indigo-dye: #081C8C;
+    --indigo-transp: #081c8c83;
+    --smoky-black: #0D0D0D;
+    --smoky-transp: #0d0d0dc8;
+    --azureish-white: #DFE2F2;
+    --gradient: linear-gradient(var(--indigo-dye), var(--smoky-black));
+
+/*============================================= Margin Bottom =============================================*/
+    --mb-64: 4rem;
+    --mb-32: 2rem;
+}
+
+/*============================================= Color Pattern =============================================*/
+.primary-color {
+    color: var(--indigo-dye);
+}
+
+.secondary-color {
+    color: var(--smoky-black);
+}
+
+.tertiary-color {
+    color: var(--imperial-red);
+}
+
+.bg-color {
+    background-color: var(--azureish-white);
+}
+
+.bg-dark-color {
+    background-color: var(--smoky-transp);
+}
+
+.bg-primary-color {
+    background-color: var(--indigo-dye);
+}
+
+
+/*============================================= BASE =============================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: auto;
+    background-color: var(--background-color);
+    font-family: var(--body-font);
+    overflow-x: hidden;
+}
+
+p {
+    font-size: var(--normal-fz);
+    color: var(--secondary-color);
+    line-height: 1.5rem;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*============================================= REUSABLE CLASSES =============================================*/
+.section {
+    width: 80%;
+    margin: auto;
+    margin-bottom: var(--mb-64);
+}
+
+.section-title {
+    color: var(--indigo-dye);
+    font-size: var(--titles-fz);
+    margin-bottom: 0;
+}
+
+.section-big-title {
+    color: var(--imperial-red);
+    font-size: var(--big-titles-fz);
+    margin-bottom: var(--mb-32);
+}
+
+.section-title,
+.section-big-title {
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    border-radius: 0;
+    width: 25%;
+    margin: 2rem .5rem;
+    transition: .4s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--indigo-dye);
+}
+
+.btn-primary:hover {
+    background-color: var(--imperial-red);
+}
+
+/*============================================= HEADER / NAVIGATION =============================================*/
+.navbar {
+    width: 80%;
+    margin: auto;
+}
+
+.navbar-brand img {
+    height: 2rem;
+}
+
+.navbar-toggler {
+    color: var(--azureish-white);
+    border: none;
+}
+
+.nav-item a {
+    color: var(--azureish-white);
+    transition: .4s ease-in-out;
+}
+
+.nav-item a:hover {
+    transform: translateY(-.25rem);
+    color: var(--imperial-red);
+}
+
+.nav-item a:active {
+    border-bottom: 2px solid var(--imperial-red);
+}
+
+.navbar-nav {
+    gap: 2rem
+}
+
+.collapse {
+    padding: 2rem;
+}
+
+/*============================================= HOME =============================================*/
+#parallaxBar{
+    height: 80vh;
+    background-color:#004c82;
+    background: url(../media/HomeBackground.jpg) 40% 80% fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 6rem;
+    margin-bottom: var(--mb-64);
+}
+
+.container-fluid {
+    color: var(--azureish-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.impact-phrase h1{
+    text-align: center;
+    font-size: var(--big-titles-fz);
+}
+
+.impact-phrase2 p{
+    margin-bottom: 0;
+    text-align: center;
+    font-size: var(--normal-fz);
+}
+
+/*============================================= SERVICES =============================================*/
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+}
+
+.services-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    color: var(--azureish-white);
+    transition: .4s ease-in-out;
+    cursor: pointer;
+}
+
+.services-item:hover {
+    transform: translateY(-.25rem);
+    box-shadow: 0 0px 16px var(--indigo-transp);
+}
+
+.services-item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: .4s ease-in-out;
+}
+
+.services-item span:hover {
+    opacity: 0;
+}
+
+#cartazes {
+    background-image: url(../media/Services/Cartazes.jpg);
+    background-size: cover;
+}
+
+#cartazes:hover {
+    background-image: url(../media/Services/CartazesDefault.png);
+}
+
+#banners {
+    background-image: url(../media/Services/Banners.jpg);
+    background-size: cover;
+}
+
+#banners:hover {
+    background-image: url(../media/Services/BannersDefault.png);
+}
+
+#adesivos {
+    background-image: url(../media/Services/Adesivos.jpg);
+    background-size: cover;
+}
+
+#adesivos:hover {
+    background-image: url(../media/Services/AdesivosDefault.png);
+}
+
+#outdoors {
+    background-image: url(../media/Services/Outdoors.jpg);
+    background-size: cover;
+}
+
+#outdoors:hover {
+    background-image: url(../media/Services/OutdoorsDefault.png);
+}
+
+#letrasCaixa {
+    background-image: url(../media/Services/LetrasCaixa.jpg);
+    background-size: cover;
+}
+
+#letrasCaixa:hover {
+    background-image: url(../media/Services/LetrasCaixaDefault.png);
+}
+
+#fachadasACM {
+    background-image: url(../media/Services/FachadasACM.jpg);
+    background-size: cover;
+}
+
+#fachadasACM:hover {
+    background-image: url(../media/Services/FachadasACMDefault.png);
+}
+
+#placas {
+    background-image: url(../media/Services/Placas.jpg);
+    background-size: cover;
+}
+
+#placas:hover {
+    background-image: url(../media/Services/PlacasDefault.png);
+}
+
+#toldos {
+    background-image: url(../media/Services/Toldos.jpg);
+    background-size: cover;
+}
+
+#toldos:hover {
+    background-image: url(../media/Services/ToldosDefault.png);
+}
+
+#personalizados {
+    background-image: url(../media/Services/Personalizados.jpg);
+    background-size: cover;
+    grid-column: 1/3;
+}
+
+#personalizados:hover {
+    background-image: url(../media/Services/PersonalizadosDefault.png);
+}
+
+/*============================================= ABOUT =============================================*/
+.about-data h1{
+    font-size: var(--big-titles-fz);
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.about-data h1:hover {
+    color: var(--indigo-dye); 
+    transform: translateY(-.25rem);
+}
+
+.about-data span{
+    margin-bottom: var(--mb-32);
+}
+
+/*============================================= SLIDES =============================================*/
+#carouselExampleIndicators {
+    background-image: url(../media/Slide/slide-bg.png);
+    margin-bottom: var(--mb-64);
+}
+
+.carousel-item img {
+    height: 50vh;
+    margin: auto;
+    box-shadow: 0 0 32px var(--indigo-transp);
+}
+
+.carousel-indicators {
+    bottom: -2.8rem;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/*============================================= CUSTOMERS =============================================*/
+#customers {
+    margin-top: 8rem;
+    margin-bottom: var(--mb-64);
+}
+
+.animate {
+    width: 350%;
+    height: 128px;
+    gap: 58rem;
+    animation: customers 16s infinite linear;
+}
+
+.animate:hover {
+    animation-play-state: paused;
+}
+
+.slide-content {
+    gap: 2rem;
+}
+
+.customers-item {
+    transition: .4s ease-in-out;
+}
+
+.customers-item:hover {
+    cursor: pointer;
+    transform: translateY(-.25rem);
+}
+
+@keyframes customers {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*============================================= CONTACT =============================================*/
+.btn span {
+    display: none;
+}
+
+.btn i {
+    font-size: 40px;
+}
+
+.btn:hover {
+    transform: translateY(-.25rem);
+}
+
+/*============================================= FOOTER =============================================*/
+.footer-content {
+    padding: 2rem 0;
+    margin: auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer-nav-content {
+    display: grid;
+    gap: 1rem;
+}
+
+.footer-nav a {
+    color: var(--azureish-white);
+    transition: .4s ease-in-out;
+}
+
+.footer-nav a:hover {
+    color: var(--imperial-red);
+}
+
+.footer-social {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social p {
+    color: var(--azureish-white);
+    margin: 0;
+}
+
+.footer-social i {
+    font-size: 32px;
+    padding-right: 1rem;
+    color: var(--azureish-white);
+    transition: .4s ease-in-out;
+}
+
+.footer-social i:hover {
+    color: var(--imperial-red);
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    grid-column: 1/3;
+    margin-top: 2rem;
+}
+
+.footer-logo img {
+    height: 164px;
+}
+
+.footer-copyright {
+    color: var(--azureish-white);
+    padding: 1rem 0;
+}
+
+/*============================================= MEDIA QUERIES =============================================*/
+@media screen and (min-width: 768px) {
+    :root {
+        --normal-fz: 1rem;
+        --titles-fz: 1.5rem;
+        --big-titles-fz: 3rem;
+    }
+
+    /*================== HOME ==================*/
+    .container-fluid {
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .impact-phrase h1 {
+        text-align: left;
+    }
+
+    .impact-phrase2 p {
+        text-align: right;
+    }
+
+    /*================== SERVICES ==================*/
+    .services-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #personalizados {
+        grid-column: 3;
+    }
+
+    .services-item {
+        height: 128px;
+    }
+    
+    /*=================== ABOUT ===================*/
+    .about-container {
+        display: flex;
+        align-items: center;
+    }
+
+    /*================= CUSTOMERS =================*/
+    .animate {
+        animation: customers 32s infinite linear;
+    }
+
+    .btn span {
+        display: block;
+    }
+
+    /*=================== FOOTER ===================*/
+    .footer-content {
+        grid-template-columns:33% 33% 33%;
+    }
+
+    .footer-logo {
+        grid-column: 3;
+        margin-top: 0;
+    }
+}
